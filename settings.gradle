@@ -1,0 +1,5 @@
+rootProject.name = 'spring-projects'
+include 'spring1'
+include 'spring2'
+include 'spring3'
+
