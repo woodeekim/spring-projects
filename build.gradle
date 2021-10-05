@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '2.1.5.RELEASE'
+        springBootVersion = '2.5.5'
     }
     repositories {
         mavenCentral()
@@ -26,8 +26,10 @@ subprojects {
     }
 
     dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
         implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
         implementation 'org.springframework.boot:spring-boot-starter-web'
+        implementation 'org.springframework.boot:spring-boot-starter-jdbc'
         runtimeOnly 'com.h2database:h2'
 
         compileOnly 'org.projectlombok:lombok'
@@ -35,4 +37,3 @@ subprojects {
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
     }
 }
-
