@@ -1,2 +1,3 @@
 rootProject.name = 'spring-projects'
 include 'basic'
+include 'core'
