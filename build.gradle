@@ -19,11 +19,13 @@ subprojects {
         mavenCentral()
     }
 
+    //lombok 설정 추가 시작
     configurations {
         compileOnly {
             extendsFrom annotationProcessor
         }
     }
+    //lombok 설정 추가 끝
 
     dependencies {
         implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
@@ -34,6 +36,8 @@ subprojects {
 
         compileOnly 'org.projectlombok:lombok'
         annotationProcessor 'org.projectlombok:lombok'
+        testCompileOnly 'org.projectlombok:lombok'
+        testAnnotationProcessor 'org.projectlombok:lombok'
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
     }
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.woody.service.MemberServiceTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-10-25T14:37:31" hostname="woodyui-MacBookPro.local" time="0.009">
+  <properties/>
+  <testcase name="findOne()" classname="co.woody.service.MemberServiceTest" time="0.004"/>
+  <testcase name="중복_회원_예외()" classname="co.woody.service.MemberServiceTest" time="0.001"/>
+  <testcase name="회원가입()" classname="co.woody.service.MemberServiceTest" time="0.001"/>
+  <testcase name="findMembers()" classname="co.woody.service.MemberServiceTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[MemberService : class co.woody.repository.MemoryMemberRepository
+MemberService : class co.woody.repository.MemoryMemberRepository
+MemberService : class co.woody.repository.MemoryMemberRepository
+MemberService : class co.woody.repository.MemoryMemberRepository
+]]></system-err>
+</testsuite>

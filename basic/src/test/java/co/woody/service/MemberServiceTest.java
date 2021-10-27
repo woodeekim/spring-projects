@@ -5,6 +5,7 @@ import co.woody.repository.MemoryMemberRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
@@ -12,12 +13,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class MemberServiceTest {
+    @Autowired
     MemberService service;
+    @Autowired
     MemoryMemberRepository repository;
 
-    public MemberServiceTest(MemberService service) {
-        this.service = service;
-    }
+//    public MemberServiceTest(MemberService service) {
+//        this.service = service;
+//    }
 
     @BeforeEach
     void beforeEach() {
