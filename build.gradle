@@ -41,3 +41,9 @@ subprojects {
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
     }
 }
+
+project(':core') {
+    dependencies {
+        implementation 'javax.inject:javax.inject:1'
+    }
+}
