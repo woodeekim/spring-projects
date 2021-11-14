@@ -1,6 +1,0 @@
-co/woody/service/MemberServiceIntegrationTest.java
- co.woody.service.MemberServiceIntegrationTest
-co/woody/repository/MemoryMemberRepositoryTest.java
- co.woody.repository.MemoryMemberRepositoryTest
-co/woody/service/MemberServiceTest.java
- co.woody.service.MemberServiceTest

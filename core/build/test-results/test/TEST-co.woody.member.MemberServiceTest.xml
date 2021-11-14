@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="co.woody.member.MemberServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-25T14:37:37" hostname="woodyui-MacBookPro.local" time="0.001">
-  <properties/>
-  <testcase name="join()" classname="co.woody.member.MemberServiceTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

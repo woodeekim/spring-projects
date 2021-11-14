@@ -17,7 +17,9 @@
 *.iws
 *.iml
 *.ipr
-/out/
+*/out/
+#/jpashop/out/*
+
 
 ### NetBeans ###
 /nbproject/private/
