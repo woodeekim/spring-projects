@@ -1,6 +1,8 @@
 package jpabook.jpashop.domain;
 
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -10,9 +12,12 @@ import java.util.List;
 
 @Entity
 @Table(name = "orders")
-@Getter @Setter
+@Getter
+@Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED) // 생성 메서드가 있기 때문에 코드를 항상 제약하는 스타일로 짜야 유지보수 입장에서도 좋다
 public class Order {
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     @Column(name = "order_id")
     private Long id;
 
@@ -25,6 +30,7 @@ public class Order {
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> orderItems = new ArrayList<>();
 
+    // CascadeType.ALL 하게 되면 Order 를 persist 하면 Order 안에 있는 OrderItem 도 강제적으로 persist 한다
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "delivery_id")
     private Delivery delivery;
@@ -67,10 +73,11 @@ public class Order {
     }
 
     // ==비즈니스 로직==
+
     /**
      * 주문 취소
      */
-    public void cancelOrder() {
+    public void cancel() {
         if (delivery.getStatus() == DeliveryStatus.COMP) {
             throw new IllegalStateException("이미 배송이 완료된 상품은 취소가 불가능합니다.");
         }
