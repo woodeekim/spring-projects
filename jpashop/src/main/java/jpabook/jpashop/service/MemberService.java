@@ -17,13 +17,13 @@ public class MemberService {
 
     //회원가입
     @Transactional
-    public Long join(Member member) throws Exception {
+    public Long join(Member member) {
         validateDuplicateMember(member); // 중복 회원 검증
         memberRepository.save(member);
         return member.getId();
     }
 
-    private void validateDuplicateMember(Member member) throws Exception {
+    private void validateDuplicateMember(Member member) {
         // EXCEPTION
         List<Member> findMembers = memberRepository.findByName(member.getName());
         if (!findMembers.isEmpty()) {
