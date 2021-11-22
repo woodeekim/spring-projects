@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -47,13 +46,6 @@ public class MemberApiController {
     static class MemberDto {
         private String name;
     }
-
-
-//    @GetMapping("/api/v1/members")
-//    public ResponseEntity memberListV1() {
-//        List<Member> members = memberService.findMembers();
-//        return ResponseEntity.status(200).body(members);
-//    }
 
     @PostMapping("/api/v1/members")
     public CreateMemberResponse saveMemberV1(@RequestBody @Valid Member member) {
