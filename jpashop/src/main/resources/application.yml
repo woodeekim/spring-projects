@@ -12,11 +12,13 @@ spring:
         # System.out을 통해출력
 #        show_sql: true
         format_sql: true
+        # 컬렉션에 페치를 사용하게 되면 페이징을 못하는 단점이 있지만 다음 명령어의 size 주게 되면 in (size) 만큼 한번에 가져온다
+        default_batch_fetch_size: 100
 
 logging:
   level:
     # logger를 통해 출력
     org.hibernate.SQL: debug
     # 쿼리 파라미터를 보는 설정
-    org.hibernate.type: trace
+#    org.hibernate.type: trace
 
