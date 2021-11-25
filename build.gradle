@@ -4,16 +4,22 @@ buildscript {
     }
     repositories {
         mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath "gradle.plugin.com.ewerk.gradle.plugins:querydsl-plugin:1.0.10"
     }
 }
 
 subprojects {
+
     apply plugin: 'java'
     apply plugin: 'org.springframework.boot'
     apply plugin: 'io.spring.dependency-management'
+    apply plugin: "com.ewerk.gradle.plugins.querydsl"
 
     repositories {
         mavenCentral()
@@ -43,6 +49,11 @@ subprojects {
         testCompileOnly 'org.projectlombok:lombok'
         testAnnotationProcessor 'org.projectlombok:lombok'
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+        // QueryDSL 위한 라이브러리
+//        implementation 'com.querydsl:querydsl-core'
+        implementation 'com.querydsl:querydsl-jpa'
+        implementation 'com.querydsl:querydsl-apt'
     }
 }
 
@@ -57,5 +68,31 @@ project(':jpashop') {
         // db 접속 상태 및 쿼리에 들어가는 자세하게 파라미터도 알 수 있다
         implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.7.1'
         implementation 'com.fasterxml.jackson.datatype:jackson-datatype-hibernate5'
+    }
+
+    //querydsl 추가
+def querydslDir = 'src/main/generated'
+//    def querydslDir = "$buildDir/generated/querydsl"
+
+    querydsl {
+        library = "com.querydsl:querydsl-apt"
+        jpa = true
+        querydslSourcesDir = querydslDir
+    }
+
+    sourceSets {
+        main {
+            java {
+                srcDirs = ['src/main/java', querydslDir]
+            }
+        }
+    }
+
+    compileQuerydsl{
+        options.annotationProcessorPath = configurations.querydsl
+    }
+
+    configurations {
+        querydsl.extendsFrom compileClasspath
     }
 }

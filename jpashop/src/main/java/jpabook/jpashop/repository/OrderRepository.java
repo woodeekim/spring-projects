@@ -110,6 +110,14 @@ public class OrderRepository {
         return query.getResultList();
     }
 
+    /**
+     * QueryDSL
+     */
+
+//    public List<Order> findAll(OrderSearch orderSearch) {
+//        return null;
+//    }
+
     public List<Order> findAllWithMemberDelivery() {
         return em.createQuery(
                 "select o " +

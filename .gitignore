@@ -20,6 +20,9 @@
 */out/
 #/jpashop/out/*
 
+jpashop/src/main/generated
+jpashop/build
+
 
 ### NetBeans ###
 /nbproject/private/
