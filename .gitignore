@@ -20,8 +20,7 @@
 */out/
 #/jpashop/out/*
 
-jpashop/src/main/generated
-jpashop/build
+
 
 
 ### NetBeans ###
@@ -34,3 +33,22 @@ db/cal.log
 db/cal.properties
 db/cal.lck
 conf/fonts/
+
+gradle/*
+
+# core
+core/out
+
+#basic
+basic/out
+
+#jpashop
+jpashop/src/main/generated
+jpashop/build
+jpashop/out
+
+#data-jpa
+data-jpa/build
+data-jpa/out
+
+

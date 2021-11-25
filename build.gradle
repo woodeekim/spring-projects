@@ -54,6 +54,9 @@ subprojects {
 //        implementation 'com.querydsl:querydsl-core'
         implementation 'com.querydsl:querydsl-jpa'
         implementation 'com.querydsl:querydsl-apt'
+
+        // db 접속 상태 및 쿼리에 들어가는 자세하게 파라미터도 알 수 있다
+        implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.7.1'
     }
 }
 
@@ -65,8 +68,6 @@ project(':core') {
 
 project(':jpashop') {
     dependencies {
-        // db 접속 상태 및 쿼리에 들어가는 자세하게 파라미터도 알 수 있다
-        implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.7.1'
         implementation 'com.fasterxml.jackson.datatype:jackson-datatype-hibernate5'
     }
 
