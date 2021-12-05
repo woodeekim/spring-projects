@@ -1,5 +1,6 @@
 package woody.co.repository;
 
+import lombok.Getter;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import javax.persistence.Column;
@@ -10,6 +11,7 @@ import java.time.LocalDateTime;
 
 // JpaBaseEntity 에 속성들을 상속받은 클래스에서 사용할 수 있도록 설정
 @MappedSuperclass
+@Getter
 public class JpaBaseEntity {
     @Column(updatable = false)
     private LocalDateTime createdDate;

@@ -1,6 +1,7 @@
 package woody.co.entity;
 
 import lombok.*;
+import woody.co.repository.BaseEntity;
 import woody.co.repository.JpaBaseEntity;
 
 import javax.persistence.*;
@@ -10,7 +11,7 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString(of = {"id", "username", "age"})
-public class Member extends JpaBaseEntity {
+public class Member extends BaseEntity {
 
     @Id @GeneratedValue
     @Column(name = "member_id")
